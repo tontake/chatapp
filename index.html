@@ -1,35 +1,22 @@
+<!DOCTYPE html>
 <html>
- <head>
- <meta charset=”utf-8”>
- </head>
- <body>
- <video id="video1" height="400" width="400" autoplay muted></video>
-<video id="video2" height="400" width="400" autoplay></video><br>
- <script src="https://webrtc.github.io/adapter/adapter-latest.js"></script>
- <script>
- var pc1 = new RTCPeerConnection(), pc2 = new RTCPeerConnection();
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
 
-navigator.mediaDevices.getUserMedia({video: true, audio: true})
-  .then(stream => pc1.addStream(video1.srcObject = stream))
-  .catch(log);
+    <label>Your ID:</label><br/>
+    <textarea id="yourId"></textarea><br/>
+    <label>Other ID:</label><br/>
+    <textarea id="otherId"></textarea>
+    <button id="connect">connect</button><br/>
 
-var add = (pc, can) => pc.addIceCandidate(can).catch(log);
-pc1.onicecandidate = e => add(pc2, e.candidate);
-pc2.onicecandidate = e => add(pc1, e.candidate);
+    <label>Enter Message:</label><br/>
+    <textarea id="yourMessage"></textarea>
+    <button id="send">send</button>
+    <pre id="messages"></pre>
 
-pc2.ontrack = e => video2.srcObject = e.streams[0];
-pc1.oniceconnectionstatechange = e => log(pc1.iceConnectionState);
-pc1.onnegotiationneeded = e =>
-  pc1.createOffer().then(d => pc1.setLocalDescription(d))
-  .then(() => pc2.setRemoteDescription(pc1.localDescription))
-  .then(() => pc2.createAnswer()).then(d => pc2.setLocalDescription(d))
-  .then(() => pc1.setRemoteDescription(pc2.localDescription))
-  .catch(log);
-
-var log = msg => console.log(msg);
- 
- 
- 
- </script>
- </body>
+    <script src="bundle.js" charset="utf-8"></script>
+  </body>
 </html>
