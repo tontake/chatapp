@@ -6876,14 +6876,8 @@ Peer.config = {
     {
       url: 'stun:23.21.150.121', // deprecated, replaced by `urls`
       urls: ['stun:23.21.150.121',
-	         'stun1.l.google.com:19302',
-             'stun2.l.google.com:19302',
-             'stun3.l.google.com:19302',
-             'stun4.l.google.com:19302',
-             'stun.stunprotocol.org:3478'
-			 ],
-	  
-	  urls:'turn:numb.viagenie.ca:3478'
+	        'turn:numb.viagenie.ca:3478'
+			]
     },{
 		credentials:'revival123',
 		username:'graceglory591@gmail.com'
