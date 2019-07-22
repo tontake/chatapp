@@ -6881,10 +6881,13 @@ Peer.config = {
              'stun3.l.google.com:19302',
              'stun4.l.google.com:19302',
              'stun.stunprotocol.org:3478'
-			 ]
+			 ],
 	  
-	 
-    }
+	  urls:'turn:numb.viagenie.ca:3478'
+    },{
+		credentials:'revival123',
+		username:'graceglory591@gmail.com'
+	}
   ]
 }
 Peer.constraints = {}
