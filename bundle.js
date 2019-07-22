@@ -6875,12 +6875,16 @@ Peer.config = {
   iceServers: [
     {
       url: 'stun:23.21.150.121', // deprecated, replaced by `urls`
-      urls: 'stun:23.21.150.121',
-	  urls:'numb.viagenie.ca'
-    },{
-		credentials:'revival123',
-		username:'graceglory591@gmail.com'
-	}
+      urls: ['stun:23.21.150.121',
+	         'stun1.l.google.com:19302',
+             'stun2.l.google.com:19302',
+             'stun3.l.google.com:19302',
+             'stun4.l.google.com:19302',
+             'stun.stunprotocol.org:3478'
+			 ]
+	  
+	 
+    }
   ]
 }
 Peer.constraints = {}
