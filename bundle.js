@@ -6873,12 +6873,18 @@ Peer.WEBRTC_SUPPORT = !!getBrowserRTC()
  */
 Peer.config = {
   iceServers: [
-    {
+  {
+	  
       url: 'stun:23.21.150.121', // deprecated, replaced by `urls`
-      urls: ['stun:23.21.150.121',
+      urls: 'stun:23.21.150.121'
+	       
+	},
+    {
+       // deprecated, replaced by `urls`
+      urls: [
 	        'turn:numb.viagenie.ca:3478'
 			]
-    },{
+    ,
 		credentials:'revival123',
 		username:'graceglory591@gmail.com'
 	}
