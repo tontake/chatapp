@@ -6885,7 +6885,7 @@ Peer.config = {
 	        'turn:numb.viagenie.ca:3478'
 			]
     ,
-		credentials:'revival123',
+		credential:'revival123',
 		username:'graceglory591@gmail.com'
 	}
   ]
